@@ -18,7 +18,7 @@
     </div>
     <main id="main">
       <!-- =========== nav=============== -->
-      <header>
+      <header class="site_nav">
         <nav class="section-container">
           <h1 class="site_title">LiFri Draws</h1>
           <ul class="navlink">
@@ -45,11 +45,12 @@
             <span id="left_tag">✏️ Hand-Drawn </span>
             <span id="right_tag">🎬 Frame-by-Frame</span>
           </div>
-          <h1>
+          <h1 class="Hero_text_header">
             🎨 Where Imagination Takes Shape ✏️ One Stroke and Frame at a Time
             🎬
           </h1>
-          <p>
+
+          <p class="hero_details">
             Want visuals that actually speak? Here, every sketch, scene, and
             second is designed to *grab attention*, stir emotion, and leave a
             mark. From concept to final frame — it’s all original, all crafted
@@ -60,6 +61,25 @@
             <button class="contact_btn">📩 Contact Me</button>
           </div>
         </div>
+        <div class="hero_floating_imgs">
+          <div class="floating_img" id="floating_img1">
+            <img
+              class="float_img1"
+              src="assets/hero_floating_image1.png"
+              alt=""
+            />
+          </div>
+          <div class="floating_img" id="floating_img2">
+            <img
+              class="float_img1"
+              src="assets/hero_floating_image2.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="hero_images">
+          <img src="assets/image1.webp" alt="" />
+        </div>
       </section>
     </main>
 
@@ -67,6 +87,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

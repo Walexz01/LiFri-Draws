@@ -128,6 +128,7 @@ main {
     left: 0;
     right: 0;
     background-color: var(--color-bg-main);
+    z-index: 111111;
     /* =================== nav=================== */
     & nav {
       padding-block: 0 !important;
@@ -156,7 +157,15 @@ main {
     }
   }
   & .hero_section {
-    padding-block: 90px;
+    padding-block: 150px;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      content: url(assets/blue-Lens-Flare-.png);
+      left: 0%;
+      top: -10%;
+    }
     & .hero_texts {
       display: flex;
       flex-direction: column;
@@ -166,6 +175,8 @@ main {
       width: 60%;
       gap: 1rem;
       margin: auto;
+      overflow: hidden;
+
       & .top_tags {
         background-color: var(--tag-bg-dark);
         font-size: 1.1rem;
@@ -191,6 +202,7 @@ main {
         font-size: 2.5rem;
         line-height: 1.2;
         letter-spacing: -1px;
+        overflow: hidden;
       }
       & p {
         font-size: 1.2rem;
@@ -204,6 +216,8 @@ main {
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        z-index: 1111;
+
         & .contact_btn {
           background-color: transparent;
           color: var(--color-text-main);
@@ -215,6 +229,23 @@ main {
           }
         }
       }
+    }
+    & .hero_floating_imgs {
+      & .floating_img {
+        position: absolute;
+        top: 10%;
+        right: 0;
+        width: 200px;
+
+        &:nth-child(2) {
+          left: 0;
+          top: 20% !important;
+          width: 300px;
+        }
+      }
+    }
+    & .hero_images {
+      padding-block: 50px;
     }
   }
 }

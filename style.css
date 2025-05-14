@@ -11,6 +11,8 @@
 
   /* Backgrounds & Surfaces */
   --color-bg-main: #f8f9fa; /* Off-white - Body background */
+  --tag-bg-light: #ffdd8a;
+  --tag-bg-dark: #ffb347;
   --color-bg-light: #f1f3f5; /* Light Grey - Cards, blocks */
   --color-bg-dark: #1d1d1d; /* Dark Charcoal - Header/Footer */
 
@@ -103,13 +105,30 @@ button {
 }
 main {
   background: var(--color-bg-main);
+  & button {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-fast);
+    border: 1px solid transparent;
+    &:hover {
+      background-color: transparent;
+      color: var(--color-text-main);
+      border-color: var(--color-bg-dark);
+    }
+  }
+  /* ==============header=============== */
   & header {
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
     background-color: var(--color-bg-main);
-
+    /* =================== nav=================== */
     & nav {
       padding-block: 0 !important;
       display: flex;
@@ -137,6 +156,65 @@ main {
     }
   }
   & .hero_section {
-    height: 100vh;
+    padding-block: 90px;
+    & .hero_texts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 60%;
+      gap: 1rem;
+      margin: auto;
+      & .top_tags {
+        background-color: var(--tag-bg-dark);
+        font-size: 1.1rem;
+        border-radius: 10px;
+        color: var(--color-text-light);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        & span {
+          padding: 10px 20px;
+          overflow: hidden;
+
+          text-wrap: nowrap;
+          border-radius: 10px;
+          color: var(--color-text-main);
+        }
+        & span#left_tag {
+          background-color: var(--tag-bg-light);
+        }
+      }
+      & h1 {
+        font-family: var(--font-Poetsen);
+        font-size: 2.5rem;
+        line-height: 1.2;
+        letter-spacing: -1px;
+      }
+      & p {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin: 0;
+        letter-spacing: -1px;
+      }
+      & .hero_cta {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        & .contact_btn {
+          background-color: transparent;
+          color: var(--color-text-main);
+          border-color: var(--color-bg-dark);
+          &:hover {
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-light);
+            border-color: transparent;
+          }
+        }
+      }
+    }
   }
 }

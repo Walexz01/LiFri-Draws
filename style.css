@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Underdog&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&family=Underdog&display=swap");
+
+:root {
+  /* Primary Brand Colors */
+  --color-primary: #f94144; /* Coral Red - Calls to action */
+  --color-secondary: #577590; /* Muted Blue - Accents and icons */
+  --color-highlight: #f9c74f; /* Warm Yellow - Hover states, emphasis */
+  --color-dark-light: rgba(0, 0, 0, 0.4);
+
+  /* Backgrounds & Surfaces */
+  --color-bg-main: #f8f9fa; /* Off-white - Body background */
+  --color-bg-light: #f1f3f5; /* Light Grey - Cards, blocks */
+  --color-bg-dark: #1d1d1d; /* Dark Charcoal - Header/Footer */
+
+  /* Text Colors */
+  --color-text-main: #1d1d1d; /* Main text */
+  --color-text-light: #ffffff; /* Text on dark or colored backgrounds */
+  --color-text-muted: #6c757d; /* Secondary text, placeholder, meta */
+
+  /* Shadows & Borders */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+
+  /* Other UI Tokens */
+  --transition-fast: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease;
+  --font-underdog: "Underdog", system-ui;
+  --font-Poetsen: "Poetsen One", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: var(--font-underdog);
+  font-weight: 500;
+  padding: 20px 0;
+  padding-bottom: 0;
+}
+
+img {
+  height: auto;
+  display: block;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: var(--color--gray);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+p {
+  font-weight: 400;
+}
+button {
+  border: 0;
+}
+.section-container {
+  width: 90%;
+  margin: auto;
+  padding-block: 70px;
+}
+
+.ParallaxVideo {
+  height: 100vh;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  & video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: -999;
+    object-fit: cover;
+  }
+  & .parallax_text {
+    background-color: var(--color-dark-light);
+    padding: 1rem 2rem;
+    & h2 {
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      font-family: var(--font-Poetsen);
+      color: var(--color-highlight);
+    }
+  }
+}
+main {
+  background: var(--color-bg-main);
+  & header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-main);
+
+    & nav {
+      padding-block: 0 !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      & h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        color: var(--color-text-main);
+      }
+      & .navlink {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        & li {
+          list-style: none;
+          font-family: var(--font-Poetsen);
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  & .hero_section {
+    height: 100vh;
+  }
+}

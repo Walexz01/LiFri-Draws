@@ -25,7 +25,10 @@
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
   --border-radius: 12px;
-
+  -card-bg: #f5f5fa; /* Soft light grey with a hint of lavender */
+  --card-text: #1d1d1f; /* Deep charcoal for legibility */
+  --card-accent: #ff7f50; /* Coral for buttons or highlights */
+  --card-shadow: rgba(150, 150, 230, 0.829);
   /* Other UI Tokens */
   --transition-fast: 0.3s ease-in-out;
   --transition-slow: 0.5s ease;
@@ -115,6 +118,7 @@ main {
     box-shadow: var(--shadow-medium);
     transition: var(--transition-fast);
     border: 1px solid transparent;
+    cursor: pointer;
     &:hover {
       background-color: transparent;
       color: var(--color-text-main);
@@ -245,7 +249,7 @@ main {
 
         &:nth-child(2) {
           left: 0;
-          top: 25% !important;
+          top: 30% !important;
           width: 300px;
         }
       }
@@ -270,7 +274,7 @@ main {
   /* ================= about section ============= */
   & #about_section {
     & .about_container {
-      padding-block-start: 0;
+      padding-block: 0;
       & .about_content {
         width: 60%;
         & p {
@@ -281,6 +285,7 @@ main {
       }
     }
   }
+  /* gloabal section header style */
   .section_header {
     display: flex;
     flex-direction: column;
@@ -301,8 +306,69 @@ main {
       user-select: none;
     }
     & h3 {
+      overflow: hidden;
       font-size: 1.3rem;
       font-family: var(--font-Poetsen);
+    }
+    & .section_header_description_n_btn {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      justify-items: start;
+      & p {
+        width: 80%;
+        margin-block: 0;
+      }
+      & button {
+        justify-self: flex-end;
+      }
+    }
+  }
+  .service_bottom {
+    margin-block: 3rem;
+
+    .service_card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: var(--card-bg);
+      color: var(--card-text);
+      margin-top: 20px;
+      box-shadow: 0 0px 12px var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      & .service_card_left {
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        .service_icon {
+          width: 70px;
+          overflow: hidden;
+        }
+        & h1 {
+          font-family: var(--font-Poetsen);
+          font-size: 3rem;
+          margin-top: 0.5rem;
+        }
+        & p {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+      }
+      & .service_card_right {
+        height: 500px;
+        max-height: 90%;
+        & img,
+        video {
+          object-fit: cover;
+          height: 100%;
+          min-height: 500px;
+          width: 100%;
+        }
+      }
     }
   }
 }

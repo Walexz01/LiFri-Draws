@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         invalidateOnRefresh: true,
         scrub: 2,
         ease: "expoScale(0.5,7,none)",
-        markers: true,
       },
     }
   );
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       start: "top 40%",
       ease: "expoScale(0.5,7,none)",
       delay: 5,
-      // markers: true,
     },
   });
 
@@ -109,7 +107,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     yoyoEase: "power1.in",
   });
   // making the floating image dragable
-  Draggable.create("#floating_img2", {
+  Draggable.create(".top_tags", {
     bounds: ".hero_section",
   });
+});
+// hero Image
+gsap.to(".hero_bottom video", {
+  width: "80%",
+  borderRadius: "10px",
+  duration: 2.5,
+  scrollTrigger: {
+    trigger: ".hero_bottom",
+    start: "top 50%",
+    end: "top 30%",
+    invalidateOnRefresh: true,
+    scrub: 2,
+    ease: "expoScale(0.5,7,none)",
+  },
 });

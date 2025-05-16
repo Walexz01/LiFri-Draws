@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   serviceCard2Tl.from(
     "#service_card2 .service_card_left",
     {
-      x: -900,
+      x: 900,
       duration: 2,
     },
     "HomeserviceCard2"
@@ -290,11 +290,101 @@ document.addEventListener("DOMContentLoaded", (event) => {
   serviceCard2Tl.from(
     "#service_card2 .service_card_right",
     {
-      x: 900,
+      x: -900,
       duration: 2,
     },
     "HomeserviceCard2"
   );
+
+  // ============= project list animation====
+  let project_img_lists = gsap.utils.toArray(".project_list_imgs");
+
+  project_img_lists.forEach((list) => {
+    const list_img_array = list.querySelectorAll(".list_img");
+
+    list_img_array.forEach((list_img) => {
+      gsap.to(list_img, {
+        y: -200,
+        duration: 2,
+        scrollTrigger: {
+          trigger: list_img,
+          start: "top 70%",
+          end: "bottom 20%",
+          scrub: 4,
+        },
+      });
+    });
+    console.log(list_img_array);
+  });
+  // change project text
+  const project_Title = document.querySelector(".list_title h2");
+
+  function updateProjectTitle(index) {
+    const titleTexts = ["Illustration", "Animation"];
+    project_Title.textContent = titleTexts[index];
+  }
+
+  let project_h2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".project_bottom",
+      start: "top 10%",
+      // endTrigger: ".down",
+      end: "top 50%",
+      scrub: 2,
+      ease: "ease",
+      onEnter: () => {
+        gsap.set(project_Title, {
+          position: "fixed",
+          opacity: "0.5",
+          bottom: "40%",
+        });
+      },
+      onEnterBack: () => {
+        gsap.set(project_Title, {
+          position: "relative",
+          bottom: "0",
+          opacity: "1",
+        });
+      },
+    },
+  });
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: "#animation_project_list",
+      start: "bottom 70%",
+      end: "bottom 50%",
+      scrub: 2,
+      ease: "ease",
+      markers: true,
+      onLeave: () => {
+        gsap.set(project_Title, {
+          opacity: 0,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.set(project_Title, {
+          opacity: 1,
+        });
+      },
+    },
+  });
+
+  project_img_lists.forEach((section, i) => {
+    console.log(section);
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 40%",
+      end: "top 20%",
+      // markers: true,
+      onEnter: () => {
+        updateProjectTitle(i);
+      },
+      onEnterBack: () => {
+        updateProjectTitle(i);
+      },
+    });
+  });
+  updateProjectTitle(0);
 
   //end
 });

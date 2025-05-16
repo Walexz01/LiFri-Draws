@@ -434,6 +434,7 @@ main {
         h3 {
           font-size: 5rem;
           text-shadow: 0 0px 12px var(--card-shadow);
+          overflow: hidden;
         }
       }
       & .contact_bottom {

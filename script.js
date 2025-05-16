@@ -431,6 +431,37 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
   updateProjectTitle(0);
+  // contact section
+  let contactTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#contact_section",
+      start: "top 60%",
+      ease: "expoScale(0.5,7,none)",
+      delay: 2,
+    },
+  });
+  const contact_header2 = document.querySelector(".contact_top h2");
+  const contact_header3 = document.querySelector(".contact_top h3");
+  const contact_headers = [contact_header2, contact_header3];
+
+  contact_headers.forEach((header, i) => {
+    let contacthead = SplitText.create(header, {
+      type: "words, chars, lines",
+    });
+
+    contactTl.from(
+      contacthead.lines,
+      {
+        rotationX: -20,
+        transformOrigin: "50% 50% -160px",
+        duration: 2,
+        autoAlpha: 0,
+        ease: "power3",
+        stagger: 0.3,
+      },
+      i == 0 ? "contacthead" : "contacthead+=0.5"
+    );
+  });
 
   //end
 });

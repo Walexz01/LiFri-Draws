@@ -314,9 +314,59 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
       });
     });
-    console.log(list_img_array);
   });
   // change project text
+  let projectSection_tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#project_section",
+      start: "top 60%",
+      ease: "expoScale(0.5,7,none)",
+      delay: 1,
+    },
+  });
+
+  projectSection_tl.from(
+    "#project_section_head",
+    {
+      width: 0,
+      duration: 2,
+      paddingInline: 0,
+    },
+    "projectheadTag"
+  );
+  // projectSection header Text splits animation
+
+  let projectsubhead = SplitText.create("#project_section_subhead", {
+    type: "words, chars, lines",
+  });
+
+  projectSection_tl.from(
+    projectsubhead.lines,
+    {
+      rotationX: -20,
+      transformOrigin: "50% 50% -160px",
+      duration: 1.5,
+      autoAlpha: 0,
+      ease: "power3",
+      stagger: 0.25,
+    },
+    "projectheadTag+=0.2"
+  );
+  let projectDescription = SplitText.create("#project_section_description p", {
+    type: "words, chars",
+  });
+  projectSection_tl.from(
+    projectDescription.chars,
+    {
+      x: 150,
+      opacity: 0,
+      duration: 0.1,
+      ease: "power4",
+      stagger: 0.01,
+    },
+    "projectheadTag+=0.5"
+  );
+
   const project_Title = document.querySelector(".list_title h2");
 
   function updateProjectTitle(index) {
@@ -328,7 +378,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     scrollTrigger: {
       trigger: ".project_bottom",
       start: "top 10%",
-      // endTrigger: ".down",
       end: "top 50%",
       scrub: 2,
       ease: "ease",
@@ -351,11 +400,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   gsap.timeline({
     scrollTrigger: {
       trigger: "#animation_project_list",
-      start: "bottom 70%",
-      end: "bottom 50%",
+      start: "bottom 65%",
+      end: "bottom 65%",
       scrub: 2,
       ease: "ease",
-      markers: true,
       onLeave: () => {
         gsap.set(project_Title, {
           opacity: 0,
@@ -363,19 +411,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
       },
       onLeaveBack: () => {
         gsap.set(project_Title, {
-          opacity: 1,
+          opacity: 0.5,
         });
       },
     },
   });
 
   project_img_lists.forEach((section, i) => {
-    console.log(section);
     ScrollTrigger.create({
       trigger: section,
       start: "top 40%",
       end: "top 20%",
-      // markers: true,
       onEnter: () => {
         updateProjectTitle(i);
       },

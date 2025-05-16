@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ============= font============= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&family=Underdog&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
@@ -244,7 +251,111 @@
         </div>
       </section>
       <!-- ======= contact ======  -->
-      <section id="contact_section"></section>
+      <section id="contact_section">
+        <div class="section-container contact_container">
+          <div class="contact_content">
+            <div class="contact_top">
+              <h2>Got an Idea?</h2>
+              <h3>Let’s Animate It</h3>
+            </div>
+            <div class="contact_bottom contact_card">
+              <div class="contact_card_left">
+                <img src="assets/contact_card_img.jpg" alt="" />
+                <div class="left_bottom_card">
+                  <h4>Connect on Socials</h4>
+                  <div class="social_links">
+                    <a
+                      href="https://www.instagram.com/lifri_draws/"
+                      target="_blank"
+                      ><img
+                        src="assets/instagram_icon.svg"
+                        alt="LiFri Draws instagram"
+                    /></a>
+                    <a href="https://twitter.com/lifri_drawss" target="_blank"
+                      ><img
+                        src="assets/twitter_icon.svg"
+                        alt="LiFri Draws twitter"
+                    /></a>
+                    <a
+                      href="https://www.youtube.com/channel/UCNSdBhhLxI7CaDvqtophBqw"
+                      target="_blank"
+                      ><img
+                        src="assets/youtube_icon.svg"
+                        alt="LiFri Draws youtube"
+                    /></a>
+                    <a
+                      href="https://www.linkedin.com/in/lucas-am%C3%A9ndola-39214b201/"
+                      target="_blank"
+                      ><img
+                        src="assets/linkedIn_icon.svg"
+                        alt="LiFri Draws linkedin"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact_card_right">
+                <form action="#">
+                  <div class="input_box_row">
+                    <div class="input_label_group">
+                      <label for="fullname">Full name</label>
+                      <input
+                        type="text"
+                        placeholder="Lucas Améndola"
+                        id="fullname"
+                        name="fullname"
+                      />
+                    </div>
+                    <div class="input_label_group">
+                      <label for="email_adress">Email Address</label>
+                      <input
+                        placeholder="you@example.com"
+                        type="email"
+                        id="email_adress"
+                        name="email_adress"
+                      />
+                    </div>
+                  </div>
+                  <!-- ============ row 2========== -->
+                  <div class="input_box_row">
+                    <div class="input_label_group">
+                      <label for="phone_number">Phone Number</label>
+                      <input
+                        type="number"
+                        placeholder="Drop your digits 📱"
+                        id="phone_number"
+                        name="phone_number"
+                      />
+                    </div>
+                    <div class="input_label_group">
+                      <label for="ProjectType">Project Type </label>
+                      <select id="ProjectType" name="ProjectType">
+                        <option value="Illustration">Illustration 🎨</option>
+                        <option value="Animation">Animation 🎬</option>
+                        <option value="Other">Other ✏️</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="input_box_row">
+                    <div class="input_label_group">
+                      <label for="Project_Details"
+                        >Message / Project Details</label
+                      >
+                      <textarea
+                        name="Project_Details"
+                        id="Project_Details"
+                        rows="10"
+                        cols="30"
+                        placeholder="Tell me what’s on your mind — the more details, the better ✨"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- -============= scripts========== -->

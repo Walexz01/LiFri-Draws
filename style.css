@@ -121,7 +121,9 @@ main {
       border-color: var(--color-bg-dark);
     }
   }
-  /* ==============header=============== */
+  video::-webkit-media-controls-panel {
+    display: none;
+  } /* ==============header=============== */
   & header {
     position: sticky;
     top: 0;

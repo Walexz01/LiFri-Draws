@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   // cal the window size to know the amout of offsetx to u
   let parallax_X = window.innerWidth > 1440 ? "40vw" : "35vw";
-
+  let parallax_scale = window.innerWidth > 450 ? 2.5 : 2;
   // scrollTrigger container for site_title_logo animation
 
   gsap.fromTo(
     ".site_title",
-    { y: -180, x: parallax_X, color: "#ffff", scale: 2.5 },
+    { y: -180, x: parallax_X, color: "#ffff", scale: parallax_scale },
     {
       y: 0,
       x: 0,

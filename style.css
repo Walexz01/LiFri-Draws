@@ -1424,6 +1424,13 @@ main {
     /* gloabal section header style */
 
     /* ========== project section=========== */
+    .project_lists {
+      overflow: visible !important;
+      .project_list_imgs {
+        height: 70vh !important;
+        overflow: visible !important;
+      }
+    }
 
     .contact_container {
       & .contact_content {

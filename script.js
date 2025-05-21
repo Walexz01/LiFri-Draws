@@ -6,8 +6,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   navIcon.addEventListener("click", () => {
     if (menuList.style.maxHeight == "0px") {
+      navIcon.src = "assets/icons8-close-window-100.png";
       menuList.style.maxHeight = "400px";
     } else {
+      navIcon.src = "assets/icons8-menu-100.png";
+
       menuList.style.maxHeight = "0px";
     }
   });

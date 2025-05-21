@@ -596,6 +596,7 @@ main {
         align-items: center;
         gap: 1rem;
         font-size: 1.1rem;
+        flex-wrap: wrap;
         a {
           transition: var(--transition-slow);
           font-weight: bold;
@@ -1175,11 +1176,24 @@ main {
     /* ==============header=============== */
     & header {
       .nav_toggle {
-        display: inline !important;
+        display: block !important;
       }
       & nav {
         & .navlink {
-          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          text-align: center;
+          background-color: var(--color-bg-light);
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
+          transition: all 0.8s;
+          li {
+            padding: 20px;
+          }
         }
       }
     }
@@ -1193,6 +1207,14 @@ main {
         }
         & p {
           font-size: 1rem;
+        }
+      }
+      & .hero_bottom {
+        padding-block: 50px;
+        margin-top: 0px;
+        & video {
+          width: 60%;
+          border-radius: 30px;
         }
       }
     }

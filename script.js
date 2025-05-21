@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+  // resposive naV
+  let navIcon = document.getElementById("navIcon");
+  let menuList = document.getElementById("menuList");
+  menuList.style.maxHeight = "0px";
+
+  navIcon.addEventListener("click", () => {
+    if (menuList.style.maxHeight == "0px") {
+      menuList.style.maxHeight = "400px";
+    } else {
+      menuList.style.maxHeight = "0px";
+    }
+  });
+
   // cal the window size to know the amout of offsetx to u
   let parallax_X = window.innerWidth > 1440 ? "40vw" : "35vw";
   let parallax_scale = window.innerWidth > 450 ? 2.5 : 2;
@@ -110,9 +123,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   Draggable.create(".top_tags", {
     bounds: ".hero_section",
   });
+  const vw_hero_img = window.innerWidth > 768 ? "80%" : "95%";
   // hero Image
   gsap.to(".hero_bottom video", {
-    width: "80%",
+    width: vw_hero_img,
     borderRadius: "10px",
     duration: 2.5,
     scrollTrigger: {

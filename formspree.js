@@ -1,12 +1,15 @@
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbx3W7RvyvNo9gQ4DYbT0sO6sMdnGsVeZ3LVVTY-P8yssFbH7BGniYgcGAPUmTI2YT1xAg/exec";
+const scriptURL = "https://formspree.io/f/xrbqvygz";
 
 const form = document.forms["contact-form"];
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+  fetch(scriptURL, {
+    method: "POST",
+    body: new FormData(form),
+    mode: "no-cors",
+  })
     .then((response) => {
       Toastify({
         text: `Thanks for reaching out! 🚀 
